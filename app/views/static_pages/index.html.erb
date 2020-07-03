@@ -1,0 +1,23 @@
+<div id="front-page-carousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <%slides = YAML.load(File.read "#{Rails.root}/app/views/static_pages/data/homepage_carousel.yml" ) %>
+    <%classTitle = "carousel-item active" %>
+    <%slides.each do |slide| %>
+      <div class="<%= classTitle %>">
+        <img class="d-block w-100" src="<%= asset_path slide["photo"]%>" alt="First slide">
+        <div class="carousel-caption d-none d-md-block">
+          <h5><%=slide["description"]%></h5>
+        </div>
+      </div>
+      <%classTitle = "carousel-item" %>
+    <% end %>
+  </div>
+  <a class="carousel-control-prev" href="#front-page-carousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#front-page-carousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
