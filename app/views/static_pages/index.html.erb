@@ -4,10 +4,7 @@
     <%classTitle = "carousel-item active" %>
     <%slides.each do |slide| %>
       <div class="<%= classTitle %>">
-        <img class="d-block w-100" src="<%= asset_path slide["photo"]%>" alt="First slide">
-        <div class="carousel-caption d-none d-md-block">
-          <h5><%=slide["description"]%></h5>
-        </div>
+        <img class="d-block w-100 h-100" src="<%= asset_path slide%>" alt="First slide">
       </div>
       <%classTitle = "carousel-item" %>
     <% end %>
@@ -21,3 +18,58 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+<% missionStatement = 'The purpose of our club is to empower our members so that they
+                      grow outside of their comfort zones. We seek to create an inviting,
+                      solid community of outdoors-people at Ohio State, and we offer our
+                      members life-changing experiences where you will make lifelong friends.
+                      We lead by example, and hope to create the next generation of
+                      outdoors-people; people that value adventure, embrace challenge, and
+                      make lifelong habits of continual learning and service.' %>
+<%= render partial: 'static_pages/word_img_blurb', locals: {orientation: "left", title: "Hi we're the Mountaineers", text: missionStatement, image: "mis/logo.png"} %>
+
+<div class="row red-background text-center">
+  <h1 class="mx-auto py-5">How the Mountaineers works</h1>
+  <div class="row">
+    <%# @todo check that all the links are working
+    <a href="https://www.facebook.com/groups/osumountaineers/">Facebook</a>
+    <a href="#">trips page</a>.
+    <a href="#">calander</a>%>
+    <% trips_text = 'A major part of the Mountaineers is our trips, and the
+                     best way to get involved in the club. Upcoming trip info
+                     will be anounced at meetings, but also can be found on the
+                     Facebook group and the trips page' %>
+    <%= render partial: 'static_pages/icon_blurb', locals:{title: "Trips", text: trips_text, icon:"camping.svg"} %>
+    <% accesibility_text = 'We understand that there are many barriers to the outdoors, and our
+                            goal is to get rid of as many of them as possible. Thats why
+                            we have trip scholarships, free gear rentals and a diversity commitey.
+                            We are commited to being a accepting and caring community, come to a meeting
+                            and let us help you get out there.' %>
+    <%= render partial: 'static_pages/icon_blurb', locals:{title: "Accesibility", text: accesibility_text, icon:"open-door.svg"} %>
+  </div>
+  <div class="row">
+    <% meetings_text = 'Meetings are held on a biweekly basis to keep members updated
+                        about the club. Trip reports, new trips, clinics and scholarships
+                        are all anounced at meetings. You can find meeting dates and
+                        locations on the calander' %>
+    <%= render partial: 'static_pages/icon_blurb', locals:{title: "Meetings", text: meetings_text, icon:"meeting.svg"} %>
+    <% meetings_text = 'To sign-up for trips and to rent gear you must be a member.
+                        Members also get access to hevily discounted through college outside.
+                        You can read more here about becoming a member.' %>
+    <%= render partial: 'static_pages/icon_blurb', locals:{title: "Rentals", text: meetings_text, icon:"tent.svg"} %>
+  </div>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="flex-column text-center">
+    <h1 class="py-4 mb-0">Check out some of the places we've been!</h1>
+    <iframe class="google-map border-0  pb-5" src="https://www.google.com/maps/d/embed?mid=1BRq0RhfNJ5HzMCXEUY8C7V84QN9ZuOK6"></iframe>
+  </div>
+</div>
+
+
+
+
+
+
+
+

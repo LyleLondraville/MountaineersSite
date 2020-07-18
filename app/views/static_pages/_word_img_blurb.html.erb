@@ -1,0 +1,18 @@
+<div class="row my-5 word-img-blurb text-center <%= "bg-light" if orientation == "right" %>">
+  <% txt_locals = {
+      title: title,
+      text: text,
+      orientation: orientation}
+     img_locals = {
+         image: image,
+         orientation: orientation
+     }
+  %>
+  <% if orientation == "left" %>
+    <%= render partial: 'static_pages/word_blurb', locals: txt_locals %>
+    <%= render partial: 'static_pages/img_blurb', locals: img_locals %>
+  <%else %>
+    <%= render partial: 'static_pages/img_blurb', locals: img_locals %>
+    <%= render partial: 'static_pages/word_blurb', locals: txt_locals %>
+  <%end %>
+</div>

@@ -2,10 +2,77 @@
 // They will automatically be included in application.scss.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .carousel-item {
-  height: 300px;
-  //min-height: 100px;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-.fake-class{
-  height: 50px;
+
+.row{
+  margin: 0;
 }
+
+.header{
+  height: 40px;
+}
+.header svg{
+  fill: white;
+  height: 100%;
+  width: auto;
+}
+
+.header ul, li, a{
+  height: inherit;
+}
+
+
+.footer {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.google-map{
+  height: 550px;
+  width: 75vw;
+  border-radius: 15px;
+}
+
+.text-blurb h1{
+  font-size: 3.4rem;
+}
+.text-blurb p{
+  font-size: 1.37rem;
+  color: #707579;
+}
+
+.icon-circle{
+  width: 5rem;
+  height: 5rem;
+  background-color: white;
+}
+
+.icon-circle svg{
+  height: 65%;
+  width: 65%;
+}
+
+.red-background{
+  background-color: #bb0000;
+  color: white;
+}
+.red-background p{
+  color: #ddd;
+}
+@media(min-height: 550px) {
+  .carousel-item {
+    height: 700px;
+  }
+}
+@media(max-height: 549px) {
+  .carousel-item {
+    height: 250px;
+  }
+}
+
+
 

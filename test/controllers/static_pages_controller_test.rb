@@ -21,7 +21,7 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get photo_archive_2019" do
+  test "should get photo_archive" do
     get static_pages_photo_archive_2019_url
     assert_response :success
   end

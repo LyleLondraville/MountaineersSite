@@ -1,0 +1,25 @@
+<div class="dropdown text-center pt-3 pb-2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%=@year%>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%(2019..Time.new.year).each do |year|%>
+      <%= link_to year, photo_archive_path(id: year), class: "dropdown-item" %>
+    <%end%>
+  </div>
+</div>
+<div class="row px-3">
+  <%imgFile = YAML.load(File.read "#{Rails.root}/app/views/static_pages/data/#{@year}_photos.yml" ) %>
+  <% imgFile.each do |images| %>
+    <div class="col-md-4 px-1">
+      <% images.each do |image| %>
+        <div class="py-1">
+          <%imgpath = asset_path "#{@year}/#{image}"%>
+          <a href="<%= imgpath %>" data-size="1600x1067">
+            <img class="rounded" src="<%= imgpath %>" style="width:100%">
+          </a>
+        </div>
+      <%end %>
+    </div>
+  <% end %>
+</div>
