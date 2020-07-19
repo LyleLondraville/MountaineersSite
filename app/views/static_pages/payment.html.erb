@@ -1,5 +1,5 @@
-<div class="row">
-  <form class="col-sm-6 payment rounded mx-5 my-5">
+<div class="row d-flex justify-content-center payment my-5">
+  <form class="col-sm-5 rounded mr-4">
     <div class="form-row mt-3">
       <div class="form-group col-sm-6">
         <label for="inputFirstName">First Name</label>
@@ -290,18 +290,22 @@
     </div>
 
   </form>
-  <div class="col-sm-6" style="display: none;">
+  <div class="col-sm-5 align-self-center text-center ml-4">
+    <h1>About the Payment Portal</h1>
+    <%# @todo make a pdf host for the insurance waiver %>
     <p>
-      This is the payment portal, you can now pay with your credit card
-      like on a normal website rather than using Venmo. This option is better because
-      it allows us to process refunds and track payments better than Venmo, so unless you can
-      not pay with a credit card, the payment portal is the best option. Your payments will be
-      securly handled and processed using Stripe, our site is PCI compliant. If you're paying for
-      membership here, keep in mind that to become a member you also need to fill out an insurance
-      waiver. If you are renting gear, your card will not be charged until you fail to return the
-      gear on time (see our policies here). If you are paying for something else, a trip or a
-      shirt, please leave a accurate description so we know what it is, not some cryptic inside joke.
-      If you have any questions about the portal you can contact Lyle the Webmaster at londraville.2@osu.edu
+      This is the Payment Portal for The Ohio State Mountaineers club. The Payment Portal
+      allows you to make payments and rent gear with your credit/debit card in place of Venmo.
+      The Payment Portal is the preferred method of payment for several reasons, some of which
+      include faster refunds and not having to wait for gear deposit refunds, so only use Venmo if you
+      can not pay with a card. Payments are securely handled using <a href="https://stripe.com/">Stripe</a> and our site is
+      <a href="https://www.pcisecuritystandards.org/">PCI compliant</a>.
+      Your OSU name.number will be used to identify your payments, so please enter your last name as it is on your OSU username.
+      If you're paying for membership, keep in mind that to become a member you also need to fill out an <a href="">insurance waiver</a>.
+      If you are renting gear, your card will not be charged until you fail to return the
+      gear on time (<%= link_to "see our gear rental policies", about_path %>) however you may see a small $1 verification charge and refund. If
+      you are paying for something else, a trip or merchandise, please leave a clear description so we know what it is.
+      If you have any questions about the Payment Portal you can contact Lyle the Webmaster at londraville.2@osu.edu
     </p>
   </div>
 </div>

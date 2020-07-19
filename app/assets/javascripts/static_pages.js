@@ -14,7 +14,7 @@ $( document ).ready( function() {
         var style = {
             base: {
                 //fontFamily: 'sans-serif, sans-serif, sans-serif',
-                fontSize: '1.1rem'
+                fontSize: '18px'
 
             },
             invalid: {

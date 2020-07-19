@@ -82,8 +82,11 @@
 }
 
 .payment {
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
   font-size: 1.1rem;
+}
+
+.payment form{
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.35);
 }
 
 .btn{
@@ -94,5 +97,5 @@
 }
 
 .StripeElement{
-
+  margin-top: 11px;
 }
