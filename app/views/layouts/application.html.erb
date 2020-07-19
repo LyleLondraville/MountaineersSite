@@ -4,8 +4,10 @@
     <title>MountaineersSite</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="page" content="<%= File.basename(request.env['PATH_INFO']) %>">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://js.stripe.com/v3/"></script>
   </head>
 
   <body>
