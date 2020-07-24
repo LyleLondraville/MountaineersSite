@@ -15,4 +15,10 @@ class StaticPagesController < ApplicationController
 
   def trips
   end
+
+  def contact
+  end
+
+  def officer
+  end
 end

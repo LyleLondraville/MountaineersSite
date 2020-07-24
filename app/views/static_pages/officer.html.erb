@@ -1,0 +1,20 @@
+<!--<div class="row my-5 d-flex justify-content-center">-->
+<div class="row my-5 d-flex justify-content-center">
+  <h1 class="my-0">Meet the 2020/2021 E-Board!</h1>
+</div>
+<div class="card-columns px-5 mx-5">
+  <% officers = YAML.load(File.read "#{Rails.root}/app/views/static_pages/data/officers.yml" ) %>
+  <% officers.each_slice(3) do |officer_row| %>
+<!--    <div class="row d-flex justify-content-around mx-5">-->
+      <%officer_row.each do |officer| %>
+        <%= render partial: 'officer_card', locals:{
+            profile_img: "officers/#{officer["photo"]}",
+            name: officer['name'],
+            position: officer['position'],
+            email: officer['email'],
+            description: officer['description']
+        }%>
+      <%end %>
+<!--    </div>-->
+  <% end %>
+</div>
