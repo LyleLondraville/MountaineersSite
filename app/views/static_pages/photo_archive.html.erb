@@ -1,13 +1,11 @@
-<div class="dropdown text-center pt-3 pb-2">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    <%=@year%>
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <%(2019..Time.new.year).each do |year|%>
-      <%= link_to year, photo_archive_path(id: year), class: "dropdown-item" %>
-    <%end%>
-  </div>
-</div>
+<%
+options = []
+(2019..Date.today.year).each do |year|
+  options << {text: year, link: photo_archive_path(id: year)}
+end
+%>
+<%= render partial: "layouts/dropdown", locals: {current_selection: @year, options: options} %>
+
 <div class="row px-3">
   <%imgFile = YAML.load(File.read "#{Rails.root}/app/views/static_pages/data/#{@year}_photos.yml" ) %>
   <% imgFile.each do |images| %>

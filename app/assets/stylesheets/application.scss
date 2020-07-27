@@ -13,6 +13,13 @@
  *= require_self
  */
 
+$scarlet: #bb0000;
+$scarlet-hover: #8b0000;
+
+body, wrapper {
+  min-height:100vh;
+}
+
 @font-face {
   font-family: "Raleway";
   src: url('app/assets/fonts/Raleway-Regular.ttf');
@@ -35,12 +42,47 @@ p{
   font-size: 1.1rem;
 }
 
-.card-img-top{
-
-
-}
-
 .calender{
   height: 90vh;
   width: 60vw
+}
+
+.dropdown-item.active{
+  color: black;
+  background-color: #ddd;
+}
+
+.dropdown-item:active{
+  color: black;
+  background-color: transparent;
+}
+
+.btn{
+  background-color: $scarlet;
+  color: white;
+  height: calc(1.5em + 0.75rem + 18px);
+  font-size: 1.1rem;
+  border: none !important;
+}
+
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary.active:not(:disabled):not(.disabled), .show > .btn-secondary.dropdown-toggle {
+  background-color: $scarlet-hover;
+}
+
+.btn-secondary:hover {
+  background-color: $scarlet-hover;
+}
+
+footer{
+  height: 56px;
+  margin-top: 2vh;
+}
+
+footer div{
+  height: inherit;
+}
+footer svg{
+  fill: white;
+  height: 60%;
+  margin-top: 30%;
 }

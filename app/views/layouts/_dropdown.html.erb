@@ -1,0 +1,10 @@
+<div class="dropdown text-center pt-3 pb-2">
+  <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <%= current_selection %>
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <%options.each do |option|%>
+      <%= link_to option[:text], option[:link], class: (option[:text].to_s == current_selection.to_s) ? "dropdown-item active" : "dropdown-item"%>
+    <%end%>
+  </div>
+</div>
