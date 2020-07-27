@@ -1,0 +1,44 @@
+<%
+  fall_title = "Fall"
+  spring_title = "Spring/Summer"
+  options = [{text: "Upcoming Trips", link: trips_path}]
+  current_date = Date.today
+  (current_date.year.downto 2019).each do |year|
+    options << {text: "#{fall_title} #{year}", link: trips_path(year: year, semester: @fall_code) }
+    options << {text: "#{spring_title} #{year}", link: trips_path(year: year, semester: @spring_code)}
+  end
+  if current_date.month < 8 or (current_date.month == 8 and  current_date.day < 15)
+    # delete the fall semester as an option if we have not reached there yet
+    options.delete_at(1)
+  end
+%>
+
+<% if @year and @semester %>
+  <%= render partial: "layouts/dropdown", locals: {current_selection: @semester==@fall_code ? "#{fall_title} #{@year}" : "#{spring_title} #{@year}", options: options} %>
+<%else %>
+  <%= render partial: "layouts/dropdown", locals: {current_selection: "Upcoming Trips", options: options} %>
+<%end %>
+
+<% if @trips.present? %>
+  <div class="trip row">
+    <% @trips.each do |trip| %>
+      <div class="card trip text-white" >
+        <img class="card-img" src="<%= asset_path "trips/#{trip.img}" %>" alt="Card image">
+        <div class="card-img-overlay px-0 py-0">
+          <h4 class="card-title mb-0 px-2 py-1 d-inline-block" style="border-bottom-right-radius: 10px"><%= trip.name %></h4>
+          <a href="<%= trip_path(trip.id) %>" class="stretched-link"></a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<%else %>
+  <div class="text-center d-flex pt-5 mt-5 px-5 mx-5" style="font-size: 2rem;">
+    <p>Looks like there aren't any trips coming up ¯\_(ツ)_/¯<br>if you are interested in leading one contact George Kinney the trips coordinator at goerge@osu.edu</p>
+    <p></p>
+  </div>
+<%end %>
+
+
+
+
+
